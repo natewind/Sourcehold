@@ -44,7 +44,7 @@ void GameMap::LoadFromDisk(ghc::filesystem::path path)
     std::mt19937 rng(dev());
     std::uniform_int_distribution<std::mt19937::result_type> dist(0, 8);
 
-    auto get_tile = [&]() { return tileset->GetTile(dist(rng)); }
+    auto get_tile = [&]() { return tileset->GetTile(dist(rng)); };
 
     std::generate(begin(tiles), end(tiles), get_tile);
 }
